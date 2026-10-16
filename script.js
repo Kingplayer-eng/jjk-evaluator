@@ -1,0 +1,52 @@
+document.addEventListener("DOMContentLoaded", () => {
+  function updateClock() {
+    const now = new Date();
+    document.getElementById("LiveClock").textContent =  
+       now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+  
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  const API_KEY = "lboWwlbqU7S06cKHW0A5Iwc0dQfkLkmjac39pYhk";
+    
+  fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
+
+    .then(response => response.json())
+     .then(data => {
+      document.getElementById("nasaTitle").textContent = data.title;
+       
+      
+      if (data.media_type === "image") {
+        document.getElementById("nasaImgWrap").innerHTML = `<img src="${data.url}" alt="${data.title}">`;
+      } else {
+        document.getElementById("nasaImgWrap").innerHTML = "";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching NASA data:", error);
+      document.getElementById("nasaTitle").textContent = "Could not load NASA image.";
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const introVideo = document.getElementById("introVideo");
+    const introOverlay = document.getElementById("introOverlay");
+
+   
+    introVideo.play().catch(error => {
+        console.log("Autoplay blocked by browser policy, bypassing intro:", error);
+        introOverlay.classList.add("hidden");
+    });
+
+    // Hide overlay when video ends normally
+    introVideo.addEventListener("ended", () => {
+        introOverlay.classList.add("hidden");
+    });
+
+    // Fallback if video fails to load
+    introVideo.addEventListener("error", () => {
+        introOverlay.classList.add("hidden");
+    });
+});
