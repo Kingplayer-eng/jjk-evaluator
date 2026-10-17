@@ -33,20 +33,36 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const introVideo = document.getElementById("introVideo");
     const introOverlay = document.getElementById("introOverlay");
+    let playbackStarted = false;
 
-   
-    introVideo.play().catch(error => {
-        console.log("Autoplay blocked by browser policy, bypassing intro:", error);
+    function showDashboard() {
         introOverlay.classList.add("hidden");
+    }
+
+    const startupTimeout = setTimeout(() => {
+        if (!playbackStarted) {
+            console.warn("Intro video did not start; showing the dashboard.");
+            showDashboard();
+        }
+    }, 4000);
+
+    introVideo.addEventListener("playing", () => {
+        playbackStarted = true;
+        clearTimeout(startupTimeout);
+    }, { once: true });
+
+    introVideo.play().catch(error => {
+        console.log("Intro video could not autoplay; showing the dashboard:", error);
+        clearTimeout(startupTimeout);
+        showDashboard();
     });
 
     // Hide overlay when video ends normally
-    introVideo.addEventListener("ended", () => {
-        introOverlay.classList.add("hidden");
-    });
+    introVideo.addEventListener("ended", showDashboard);
 
     // Fallback if video fails to load
     introVideo.addEventListener("error", () => {
-        introOverlay.classList.add("hidden");
+        clearTimeout(startupTimeout);
+        showDashboard();
     });
 });
