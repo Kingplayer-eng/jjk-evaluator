@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="dashboard-container">
-
-     
-        <header class="top-header">
+  <!DOCTYPE html>
+       <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Dashboard</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+            <body>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_vS-89kVilewv13TOX_ML3YBwFSHKhYD-3KCUhZ0zHw&s=10" alt="background" class="direct-bg">
+            <div class="dashboard-container">
+                 <header class="top-header">
             <form action="https://www.google.com/search" method="get" class="search-form">
-                <input type="text" name="q" placeholder="Search Google..." class="search-input" autocomplete="off">
+                      <input type="text" name="q" placeholder="Search Google..." class="search-input" autocomplete="off">
             </form>
-            
-            
-            <div class="pulse-badge">
-                
+             <div class="pulse-badge">
                 <span id="LiveClock">00:00 AM</span>
             </div>
         </header>
 
-        
         <div class="main-grid">
-            
-            
             <div class="left-column">
                 <section class="card apps-card">
                     <h2>Quick Apps</h2>
@@ -33,36 +26,34 @@
                         <a href="https://github.com" target="_blank" class="app-tile">
                             <span>🐙</span> Github
                         </a>
-                     
                         <a href="https://stardance.hackclub.com/@saatvik_270211/projects" target="_blank" class="app-tile">
                             <span>⭐</span> Stardance
                         </a>
                         <a href="https://google.com" target="_blank" class="app-tile">
                             <span>🌐</span> Google
-                            <a href="https://www.youtube.com/" target="_blank" class="app-title">
-                                 <span>📺</span> Youtube
-
-                            </a>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" class="app-tile">
+                            <span>📺</span> YouTube
                         </a>
                     </div>
                 </section>
                  
                 <section class="card nasa-card">
-                    <h2>Nasa Astronomy Picture</h2>
+                            <h2>Nasa Astronomy Picture</h2>
                     <div id="nasaContent">
-                        <p id="nasaTitle" class="nasa-title">Loading space view...</p>
+                              <p id="nasaTitle" class="nasa-title">Loading space view...</p>
                         <div id="nasaImgWrap"></div>
                     </div>
                 </section>
             </div>
 
-          
+
             <aside class="card news-square">
                 <h2>Mini News</h2>
                 <ul class="news-list">
                     <li>
                         <span class="news-tag">Dev</span>
-                        <a href="https://github.com/trending" target="_blank">Trending updates today.</a>
+                           <a href="https://github.com/trending" target="_blank">Trending updates today.</a>
                     </li>
                     <li>
                         <span class="news-tag">Space</span>
@@ -70,16 +61,15 @@
                     </li>
                 </ul>
             </aside>
-
         </div>
     </div>
     
-<div id="introOverlay" class="intro-overlay">
-    <video id="introVideo" autoplay muted playsinline preload="auto">
-        <source src="intro.mp4" type="video/mp4">
-        <source src="intro.webm" type="video/webm">
-    </video>
-</div>
+    <div id="introOverlay" class="intro-overlay">
+        <video id="introVideo" autoplay muted playsinline preload="auto">
+            <source src="intro.mp4" type="video/mp4">
+            <source src="intro.webm" type="video/webm">
+        </video>
+    </div>
 
     <script src="script.js"></script>
 </body>
