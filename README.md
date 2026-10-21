@@ -5,9 +5,13 @@
 - Google Search : allow you to search anything inside it.
 - Github and Nasa News
 - Stardance , GitHub , Google  and Youtube icon.
-
+- Live clock
+- Blurry background
+  
 # Credit
 - Gemini (free tier) used for syntax and debug.
+
+
   
 
 
