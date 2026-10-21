@@ -4,7 +4,7 @@
 # Features
 - Google Search : allow you to search anything inside it.
 - Github and Nasa News
-- Stardance , GitHub , Google icons
+- Stardance , GitHub , Google  and Youtube icon.
 
 # Credit
 - Gemini (free tier) used for syntax and debug.
