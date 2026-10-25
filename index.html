@@ -1,100 +1,129 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Tab Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!--  Background  -->
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYtWJKVu2vV3QxQuXooPVdIz_dz7Ly4oqrh-RuIyhy-w&s=10" alt="Space Background" class="background-image">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Tab Dashboard</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
 
-    <div class="dashboard-wrapper">
-        <!-- Header Bar: Search & Clock -->
-        <header class="top-header">
-            <form action="https://www.google.com/search" method="get" class="search-box">
-                <input type="text" name="q" placeholder="Search Google..." class="search-input" autocomplete="off">
-            </form>
+        <!-- Background -->
+        <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYtWJKVu2vV3QxQuXooPVdIz_dz7Ly4oqrh-RuIyhy-w&s=10"
+        alt="Space background"
+        class="background-image"
+        >
 
-            <div class="clock-badge">
-                <span id="LiveClock">00:00 AM</span>
-            </div>
+        <div class="main">
+
+        <!-- google search -->
+        <header class="topbar">
+
+        <form action="https://www.google.com/search" method="get" class="google-search">
+        <input
+        type="text"
+        name="q"
+        placeholder="Search Google..."
+        class="search-field"
+        autocomplete="off"
+        >
+        </form>
+
+        <div class="clock">
+        <span id="LiveClock">00:00 AM</span>
+        </div>
+
         </header>
 
-        
-        <div class="dashboard-grid">
-            <div class="main-column">
-                <!--  App icons -->
-                <section class="card-widget apps-widget">
-                    <h2 class="widget-title">Quick Apps</h2>
-                    <div class="apps-grid">
-                        <a href="https://github.com" target="_blank" class="app-button">
-                            <span class="app-icon">🐙</span> GitHub
-                        </a>
-                        <a href="https://stardance.hackclub.com/@saatvik_270211/projects" target="_blank" class="app-button">
-                            <span class="app-icon">⭐</span> Stardance
-                        </a>
-                        <a href="https://google.com" target="_blank" class="app-button">
-                            <span class="app-icon">🌐</span> Google
-                        </a>
-                        <a href="https://www.youtube.com/" target="_blank" class="app-button">
-                            <span class="app-icon">📺</span> YouTube
+        <!-- Main layout -->
+        <div class="maingrid">
+
+        <div class="spaceArea">
+
+        <!-- Quick apps -->
+        <section class="space-card">
+        <h2 class="section-heading">Quick Apps</h2>
+
+        <div class="app-list">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="app-link">
+        <span class="app-emoji">🐙</span> GitHub
+        </a>
+
+        <a href="https://stardance.hackclub.com/@saatvik_270211/projects" target="_blank" rel="noopener noreferrer" class="app-link">
+        <span class="app-emoji">⭐</span> Stardance
+        </a>
+
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="app-link">
+    <span class="app-emoji">🌐</span> Google
+</a>
+
+<a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="app-link">
+<span class="app-emoji">📺</span> YouTube
                         </a>
                     </div>
                 </section>
 
-                <!-- Weather -->
-                <section class="card-widget weather-widget">
-                    <h2 class="widget-title">Space Weather / Forecast</h2>
-                    <div class="weather-search-bar">
-                        <input type="text" id="cityInput" placeholder="Enter city name..." class="search-input">
-                          <button id="searchBtn" class="app-button">Check</button>
+<!-- Weather -->
+<section class="space-card">
+<h2 class="section-heading">Space Weather</h2>
 
-                    </div>
-                     <div id="weatherDisplay" class="weather-details">
-                         <h3 id="cityName" class="location-heading">Select a Location</h3>
-                        <p id="temperature" class="weather-text">-- °C</p>
-                        <p id="description" class="weather-text">Condition</p>
-                        <p id="humidity" class="weather-text">Humidity: --%</p>
-                        <p id="wind" class="weather-text">Wind: -- m/s</p>
+<div class="city-search">
+<input
+type="text"
+id="cityInput"
+placeholder="Enter city name..."
+class="search-field"
+>
+<button id="searchBtn" class="app-link" type="button">
+Check
+</button>
+    </div>
+
+    <div id="weatherDisplay" class="weather-info">
+    <h3 id="cityName" class="city-title">Select a Location</h3>
+    <p id="temperature" class="weather-value">-- °C</p>
+<p id="description" class="weather-value">Condition</p>
+                        <p id="humidity" class="weather-value">Humidity: --%</p>
+                        <p id="wind" class="weather-value">Wind: -- m/s</p>
                     </div>
                 </section>
 
-                <!-- NASA  -->
-                <section class="card-widget nasa-widget">
-                    <h2 class="widget-title">NASA Astronomy Picture</h2>
+                <!-- NASA picture -->
+                <section class="space-card">
+                    <h2 class="section-heading">NASA Astronomy Picture</h2>
+
                     <div id="nasaContent">
-                        <p id="nasaTitle" class="nasa-caption">Loading space view...</p>
-                        <div id="nasaImgWrap" class="nasa-image-container"></div>
+                        <p id="nasaTitle" class="nasa-title">Loading space view...</p>
+                        <div id="nasaImgWrap" class="nasa-picture"></div>
                     </div>
                 </section>
+
             </div>
 
-            <!--  Mini News -->
-            <aside class="card-widget news-sidebar">
-                <h2 class="widget-title">Mini News</h2>
-                <ul class="news-feed">
-                    <li class="news-item">
-                        <span class="news-category">Dev</span>
-                        <a href="https://github.com/trending" target="_blank" class="news-link">Trending updates today.</a>
+            <!-- News -->
+            <aside class="space-card news-panel">
+                <h2 class="section-heading">News</h2>
+
+                <ul class="news-list">
+                    <li class="news-entry">
+                        <span class="news-tag">Dev</span>
+                        <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="news-title-link">
+                            Trending updates today.
+                        </a>
                     </li>
-                    <li class="news-item">
-                        <span class="news-category">Space</span>
-                        <a href="https://nasa.gov" target="_blank" class="news-link">Latest deep captures.</a>
+
+                    <li class="news-entry">
+                        <span class="news-tag">Space</span>
+                        <a href="https://nasa.gov" target="_blank" rel="noopener noreferrer" class="news-title-link">
+                            Latest deep captures.
+                        </a>
                     </li>
                 </ul>
             </aside>
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZLPk2j3cQX7PpxqSKGhTfXWr-6oL7q7JsiAi7oNBojw&s=10" alt="Space Background" class="background-image">
-        </div>
-    </div>
 
-    
-    <div id="introOverlay" class="splash-screen">
-        <video id="introVideo" autoplay muted playsinline preload="auto" class="splash-video">
-            <source src="intro.mp4" type="video/mp4">
-            <source src="intro.webm" type="video/webm">
-        </video>
+        </div>
     </div>
 
     <script src="script.js"></script>
