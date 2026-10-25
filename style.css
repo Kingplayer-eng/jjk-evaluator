@@ -1,23 +1,26 @@
+
+
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 body {
     position: relative;
-    background-color: #081527;
-    color: #c9d1d9;
-    font-family: BlinkMacSystemFont, Roboto, sans-serif;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    min-height: 100vh;
     overflow-x: hidden;
+
+    background-color: #081527;
+    color: #c9d1d9;
+    font-family: BlinkMacSystemFont, Roboto, sans-serif;
 }
 
-
+/* Space background */
 .background-image {
     position: fixed;
     top: 0;
@@ -29,21 +32,22 @@ body {
     z-index: -1;
 }
 
-
-.dashboard-wrapper {
+/* Main dashboard */
+.main {
     position: relative;
     width: 100%;
     max-width: 1100px;
-    background-color: rgba(24, 26, 30, 0.85);
+    padding: 22px;
+
+    background-color: rgba(16, 31, 62, 0.85);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 22px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-
-.top-header {
+/* Top bar */
+.topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,184 +55,187 @@ body {
     margin-bottom: 20px;
 }
 
-.search-box {
+.google-search {
     flex: 1;
 }
 
-.search-input {
+.search-field {
     width: 100%;
+    padding: 12px;
+
     background-color: #0d1117;
     border: 1px solid #30363d;
     border-radius: 8px;
-    padding: 12px;
     color: #f0f6fc;
     font-size: 14px;
 }
 
-.search-input:focus {
+.search-field:focus {
     border-color: #58a6ff;
     outline: none;
 }
 
-.clock-badge {
+/* Clock */
+.clock {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #080a0e;
     padding: 10px 14px;
-    border-radius: 18px;
+
+    background-color: #080a0e;
     border: 1px solid #2c3136;
-    font-size: 13px;
+    border-radius: 18px;
     color: #58a6ff;
+    font-size: 13px;
 }
 
-/* Grid Layout */
-.dashboard-grid {
+/* Main grid */
+.maingrid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 16px;
 }
 
-.main-column {
+.spaceArea {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-
-.card-widget {
+/* Dashboard cards */
+.space-card {
     padding: 14px;
     border: 1px solid #30363d;
-    background-color: rgba(11, 13, 17, 0.8);
     border-radius: 14px;
+    background-color: rgba(11, 13, 17, 0.8);
 }
 
-.widget-title {
-    font-size: 14px;
-    color: #8b949e;
-    text-transform: uppercase;
+.section-heading {
     margin-bottom: 12px;
-}
-
-/*  Appsicons */
-.apps-grid {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.app-button {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 10px 14px;
-    color: #b5bdc5;
+    color: #8b949e;
     font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Quick apps */
+.app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.app-link {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 10px 14px;
+
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    color: #b5bdc5;
+    font-size: 14px;
     text-decoration: none;
-    transition: border-color 0.2s, transform 0.1s;
     cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
 }
 
-.app-button:hover {
+.app-link:hover {
     border-color: #58a6ff;
     transform: translateY(-2px);
 }
 
-/* Weather  */
-.weather-search-bar {
+/* Weather */
+.city-search {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.location-heading {
-    color: #58a6ff;
-    font-size: 14px;
+.city-title {
     margin-bottom: 6px;
-}
-
-.weather-text {
-    font-size: 13px;
-    color: #b5bdc5;
-    margin-bottom: 4px;
-}
-
-/* NASA  */
-.nasa-caption {
     color: #58a6ff;
-    margin-bottom: 10px;
     font-size: 14px;
 }
 
-.nasa-image-container img {
-    max-height: 200px;
+.weather-value {
+    margin-bottom: 4px;
+    color: #b5bdc5;
+    font-size: 13px;
+}
+
+/* NASA picture */
+.nasa-title {
+    margin-bottom: 10px;
+    color: #58a6ff;
+    font-size: 14px;
+}
+
+.nasa-picture img {
+    display: block;
     width: 100%;
+    max-height: 200px;
     object-fit: cover;
     border: 1px solid #30363d;
     border-radius: 6px;
-    display: block;
 }
 
-
-.news-sidebar {
+/* News */
+.news-panel {
     display: flex;
     flex-direction: column;
 }
 
-.news-feed {
-    list-style: none;
+.news-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    list-style: none;
 }
 
-.news-item {
+.news-entry {
     font-size: 12px;
 }
 
-.news-category {
-    color: #0d1117;
-    background-color: #8b949e;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-weight: bold;
+.news-tag {
     margin-right: 6px;
+    padding: 3px 6px;
+
+    background-color: #8b949e;
+    border-radius: 4px;
+    color: #0d1117;
+    font-weight: bold;
 }
 
-.news-link {
+.news-title-link {
     color: #4a9af6;
     text-decoration: none;
 }
 
-.news-link:hover {
+.news-title-link:hover {
     text-decoration: underline;
 }
 
+/* Small screens */
+@media (max-width: 700px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
 
-.splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0d1117;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
+    .main {
+        padding: 14px;
+    }
 
-.splash-screen.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
+    .maingrid {
+        grid-template-columns: 1fr;
+    }
 
-.splash-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    .topbar {
+        gap: 10px;
+    }
+
+    .city-search {
+        flex-wrap: wrap;
+    }
 }
