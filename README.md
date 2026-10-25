@@ -9,9 +9,9 @@
 - Live clock
 - Blurry background
 - New weather by entering name of your city .
+- Removed complex coding.
   
-# Credit
-- Gemini (free tier) used for syntax , and complex coding .
+  
 
 
   
